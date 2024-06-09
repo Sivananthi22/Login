@@ -1,0 +1,141 @@
+*{
+    box-sizing:border-box;
+}
+:root{
+    --primary_color:#B0235F;
+    --secondary_color:#FA7268;
+    --tertiary_color:#ffffff;
+    --quatnery_color:gray;
+    --quinary_color:#46232D;
+    --senary_color:#4B2D3C;
+}
+body{
+    display:flex; 
+    place-items:inherit;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    background-color: var(--primary_color);
+    background-image: url(./Images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    color: var(--tertiary_color);
+    animation: rotate 10s linear infinite alternate;
+    }
+@keyframes rotateBackground{
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+body::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+.card{
+    position:absolute;
+    z-index: 1;
+    width: 90%;
+    max-width: 600px;
+    margin: 0;
+    padding:10px;
+    border-radius: 5px;
+    background: var(--quinary_color);
+    backdrop-filter: blur(10px);
+    text-align:center;
+}
+#title > h2{
+    font-size: 44px;
+    margin:0;
+    color:var(--tertiary_color);
+}
+#title >p{
+    font-size: 26px;
+    margin-bottom: 35px;
+    color:var(--tertiary_color)
+}
+.form{
+    width: 100%;
+    margin: 10px;
+    display: ;
+    gap: 10px;
+}
+.form > :is(input,button){
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: none;
+    /* margin-top: 10px; */
+}
+form > input{
+    color:var(--tertiary_color);
+    background:var(--senary_color);
+    font-family: Arial,sans-serif;
+    font-size: 26px;
+    padding: 10px ;
+    /* margin-top: 25px;
+    border-radius: 5px;
+    border:none ;
+    /* width: 100%; */
+    height: 45px;
+    box-sizing: border-box; */
+}
+form > input::placeholder{
+    color: var(--quatnery_color);
+}
+form >a{
+    color:var(--secondary_color);
+    font-size: 26px;
+    text-align: left;
+    text-decoration: none;
+    margin-bottom: 50px;
+}
+form > button{
+    cursor: pointer;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
+    background: var(--secondary_color);
+    color:var(--tertiary_color);
+    border: none;
+    border-radius: 5px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s ease;
+}
+form > button:hover{
+    background: var(--primary_color);
+}
+
+@media (min-width: 448px) {
+    .card {
+        margin: 40px;
+        width: 70%;
+        min-width: 400px;
+    }
+}
+
+/* Media Query for Width >= 628px */
+@media (min-width: 628px) {
+    .card {
+        position: absolute;
+        top: 50%;
+        right:0;
+        bottom: 20px;
+        padding: 40px; 
+        width: 50%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+        transform: translateY(-50%);
+    }
+}
